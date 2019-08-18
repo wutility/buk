@@ -1,4 +1,5 @@
-const m = require('../index')
+const m = require('../index');
+
 console.log(m.addBackSlashes("doesn't and what's"))
 
 console.log(m.rmBackSlashes("doesn\\'t what\\\\'s \\") );
