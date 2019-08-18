@@ -1,6 +1,6 @@
 {
   "name": "buk",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "javascript, some useful methods",
   "main": "index.js",
   "scripts": {
@@ -10,12 +10,13 @@
   },
   "keywords": [
     "escape",
-    "strip html",
+    "skip html",
     "encode html",
     "decode html",
     "html special chars",
     "regex",
     "string",
+    "html",
     "javascript"
   ],
   "repository": {

@@ -15,7 +15,7 @@ var buk = require('buk');
 Or include it via jsDelivr CDN:
 
 ```html
-<script src="https://cdn.jsdelivr.net/npm/buk@1.0.1/index.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/buk@1.0.2/index.min.js"></script>
 ```
 
 ## Methods & Examples
@@ -23,7 +23,7 @@ Or include it via jsDelivr CDN:
 buk.addBackSlashes("doesn't and what's") // doesn\'t and what\'s
 buk.rmBackSlashes("doesn\\'t what\\\\'s \\") // doesn't what's
 
-buk.stripHTML("<scrip>hello world</script>living<br />") // hello worldliving
+buk.skipHTML("<scrip>hello world</script>living<br />") // hello worldliving
 
 buk.encodeHTML("<scrip>hello world</script>") // &lt;scrip&gt;hello world&lt;/script&gt;
 buk.decodeHTML("&lt;scrip&gt;hello world&lt;/script&gt;") // <scrip>hello world</script>

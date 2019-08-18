@@ -50,7 +50,7 @@
       return s.replace(/\\/g, '').trim();
     },
 
-    stripHTML(s) {
+    skipHTML(s) {
       if (
         (typeof process === "undefined" ? "undefined" : this._typeof(process)) === "object" ||
         typeof window !== "undefined"
