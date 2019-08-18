@@ -1,0 +1,35 @@
+{
+  "name": "buk",
+  "version": "1.0.0",
+  "description": "javascript, some useful methods",
+  "main": "index.js",
+  "scripts": {
+    "dev": "parcel examples/index.html",
+    "build": "parcel build src/index.js",
+    "test": "jest"
+  },
+  "keywords": [
+    "escape",
+    "strip html",
+    "encode html",
+    "decode html",
+    "html special chars",
+    "regex",
+    "string",
+    "javascript"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/haikelfazzani/buk.git.git"
+  },
+  "bugs": {
+    "url": "https://github.com/haikelfazzani/buk.git/issues"
+  },
+  "homepage": "https://github.com/haikelfazzani/buk.git#readme",
+  "license": "MIT",
+  "devDependencies": {
+    "jest": "^24.8.0",
+    "parcel-bundler": "^1.10.3"
+  },
+  "author": "Haikel Fazzani"
+}
