@@ -1,4 +1,4 @@
-var m = require('../index');
+var buk = require('../index');
 
 
 /**
@@ -7,6 +7,6 @@ var m = require('../index');
  */
 
 test('skip html tags and return string between or out', () => {
-  expect(m.stripHTML("<scrip>hello world</script>living<br />"))
+  expect(buk.stripHTML("<scrip>hello world</script>living<br />"))
   .toBe("hello worldliving");
 });

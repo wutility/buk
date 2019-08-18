@@ -1,4 +1,4 @@
-var m = require('../index');
+var buk = require('../index');
 
 
 /**
@@ -7,6 +7,6 @@ var m = require('../index');
  */
 
 test('should decode String special chars to html tags', () => {
-  expect(m.decodeHTML("&lt;scrip&gt;hello world&lt;/script&gt;"))
+  expect(buk.decodeHTML("&lt;scrip&gt;hello world&lt;/script&gt;"))
   .toBe("<scrip>hello world</script>");
 });

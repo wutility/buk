@@ -1,4 +1,4 @@
-var m = require('../index');
+var buk = require('../index');
 
 /**
  * encodeHTML  
@@ -6,6 +6,6 @@ var m = require('../index');
  */
 
 test('should encode html special chars', () => {
-  expect(m.encodeHTML("<scrip>hello world</script>"))
+  expect(buk.encodeHTML("<scrip>hello world</script>"))
   .toBe("&lt;scrip&gt;hello world&lt;/script&gt;");
 });

@@ -1,6 +1,6 @@
 {
   "name": "buk",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "javascript, some useful methods",
   "main": "index.js",
   "scripts": {
