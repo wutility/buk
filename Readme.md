@@ -7,7 +7,7 @@ $ npm i buk --save
 ```
 
 ## Usage
-```
+```js
 import buk from 'buk';
 or
 var buk = require('buk');
