@@ -19,6 +19,7 @@ yarn.lock
 src/
 tests/
 examples/
+example/
 dist/
 CHANGELOG.md
 .cache
