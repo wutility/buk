@@ -12,80 +12,81 @@
 
   return {
 
-    _typeof(obj) {
-      if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") {
-        _typeof = function _typeof(obj) {
-          return typeof obj;
-        };
-      } else {
-        _typeof = function _typeof(obj) {
-          return obj &&
-            typeof Symbol === "function" &&
-            obj.constructor === Symbol &&
-            obj !== Symbol.prototype
-            ? "symbol"
-            : typeof obj;
-        };
-      }
-      return _typeof(obj);
-    },
-
-    _instanceof(left, right) {
-      if (
-        right != null &&
-        typeof Symbol !== "undefined" &&
-        right[Symbol.hasInstance]
-      ) {
-        return !!right[Symbol.hasInstance](left);
-      } else {
-        return left instanceof right;
-      }
-    },
 
     addBackSlashes(s) {
-      return s.replace(/(["'])/g, "$1");
+      return typeof s === 'string' || s instanceof String
+        ? s.replace(/(["'])/g, "$1")
+        : new Error("Invalid type passed to function");
     },
 
     rmBackSlashes(s) {
-      return s.replace(/\\/g, '').trim();
+      return typeof s === 'string' || s instanceof String
+        ? s.replace(/\\/g, '').trim()
+        : new Error("Invalid type passed to function");
     },
 
     skipHTML(s) {
-      if (
-        (typeof process === "undefined" ? "undefined" : this._typeof(process)) === "object" ||
-        typeof window !== "undefined"
-      ) {
-        return s.replace(/<(.|\n)*?>/g, "");
-      } else {
-        var d = new DOMParser().parseFromString(s, "text/html");
-        return d.body.textContent || "";
+      try {
+
+        if (typeof process === "object" || typeof window !== "undefined") {
+          return s.replace(/<(.|\n)*?>/g, "");
+        } else {
+          var d = new DOMParser().parseFromString(s, "text/html");
+          return d.body.textContent || "";
+        }
+        
+      } catch (e) {
+
+        return e.name === 'TypeError'
+          ? new Error("Invalid type or no argument passed to function")
+          : e;
       }
     },
 
     encodeHTML(s) {
-      var ENC_CHARS = {
-        "&": "&amp;",
-        "<": "&lt;",
-        ">": "&gt;",
-        '"': "&quot;",
-        "'": "&#039;"
-      };
-      return s.replace(/[&<>"']/g, function (m) {
-        return ENC_CHARS[m];
-      });
+      try {
+        var ENC_CHARS = {
+          "&": "&amp;",
+          "<": "&lt;",
+          ">": "&gt;",
+          '"': "&quot;",
+          "'": "&#039;"
+        };
+        return s.replace(/[&<>"']/g, function (m) {
+          return ENC_CHARS[m];
+        });
+
+      } catch (e) {
+
+        return e.name === 'TypeError'
+          ? new Error("Invalid type or no argument passed to function")
+          : e;
+      }
     },
 
     decodeHTML(s) {
-      var DEC_CHARS = {
-        "&amp;": "&",
-        "&lt;": "<",
-        "&gt;": ">",
-        "&quot;": '"',
-        "&#039;": "'"
-      };
-      return s.replace(/&amp;|&lt;|&gt;|&quot;|&#039;/g, function (m) {
-        return DEC_CHARS[m];
-      });
+
+      try {
+        var DEC_CHARS = {
+          "&amp;": "&",
+          "&lt;": "<",
+          "&gt;": ">",
+          "&quot;": '"',
+          "&#039;": "'"
+        };
+        return s.replace(/&amp;|&lt;|&gt;|&quot;|&#039;/g, function (m) {
+          return DEC_CHARS[m];
+        });
+
+      } catch (e) {
+
+        return e.name === 'TypeError'
+          ? new Error("Invalid type or no argument passed to function")
+          : e;
+      }
     }
+
+
   };
+
 }));
