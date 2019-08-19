@@ -15,7 +15,7 @@ var buk = require('buk');
 Or include it via jsDelivr CDN:
 
 ```html
-<script src="https://cdn.jsdelivr.net/npm/buk@1.0.3/index.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/buk@1.0.4/index.min.js"></script>
 ```
 
 ## Methods & Examples
