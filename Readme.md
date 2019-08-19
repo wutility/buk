@@ -52,3 +52,6 @@ buk.rmBackSlashes("doesn\\'t what\\\\'s \\")
 
 - Works both in [Node.js](https://nodejs.org) and in the browser.
 - All pull requests are welcome, feel free.
+
+## License
+MIT
