@@ -10,3 +10,9 @@ test('skip html tags and return string between or out', () => {
   expect(buk.skipHTML("<scrip>hello world</script>living<br />"))
   .toBe("hello worldliving");
 });
+
+
+test('skip html tags and return string between or out', () => {
+  expect(buk.skipHTML("<link  /><script src=''>"))
+  .toBe("");
+});

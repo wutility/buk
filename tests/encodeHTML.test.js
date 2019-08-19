@@ -10,3 +10,7 @@ test('should encode html special chars', () => {
   .toBe("&lt;scrip&gt;hello world&lt;/script&gt;");
 });
 
+test('should encode html special chars', () => {
+  expect(buk.encodeHTML("<link />"))
+  .toBe("&lt;link /&gt;");
+});

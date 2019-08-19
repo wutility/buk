@@ -7,3 +7,8 @@ var buk = require('../index');
 test('should add slash before every single quote and double', () => {
   expect(buk.addBackSlashes("doesn't and what's")).toBe("doesn\'t and what\'s");
 });
+
+
+test('should add slash before every single quote and double', () => {
+  expect(buk.addBackSlashes('doesn"t and what"s')).toBe("doesn\"t and what\"s");
+});

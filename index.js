@@ -12,7 +12,6 @@
 
   return {
 
-
     addBackSlashes(s) {
       return typeof s === 'string' || s instanceof String
         ? s.replace(/(["'])/g, "$1")
@@ -34,7 +33,7 @@
           var d = new DOMParser().parseFromString(s, "text/html");
           return d.body.textContent || "";
         }
-        
+
       } catch (e) {
 
         return e.name === 'TypeError'
@@ -43,7 +42,7 @@
       }
     },
 
-    encodeHTML(s) {
+    encodeHTML(s) {      
       try {
         var ENC_CHARS = {
           "&": "&amp;",
@@ -64,8 +63,7 @@
       }
     },
 
-    decodeHTML(s) {
-
+    decodeHTML(s) {      
       try {
         var DEC_CHARS = {
           "&amp;": "&",
