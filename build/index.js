@@ -7,6 +7,8 @@
   function wrap(str, _ref) {
     var ws = _ref.ws,
         we = _ref.we;
+    ws = ws || "";
+    we = we || "";
     return ws + str + we;
   }
 
