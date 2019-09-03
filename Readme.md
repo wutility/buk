@@ -16,6 +16,8 @@ var { skipQuotes } = require('buk');
 Or include it via jsDelivr CDN:
 ```html
 <script src="https://cdn.jsdelivr.net/npm/buk@1.1.1/build/index.min.js"></script>
+access via object : buk
+Example : skipHTML("<scrip>hello world</script>living<br />") // hello worldliving
 ```
 
 ## Methods & Examples
@@ -28,28 +30,25 @@ encodeHTML("<scrip>hello world</script>")
 ```
 
 - **decodeHTML(String): String|Error**  
-*chars to decode : < '' "" & >*
+*chars to decode : '' < "" & >*
 ```js
-decodeHTML("&lt;div&gt;hello world&lt;/div&gt;") 
-// <div>hello world</div>
+decodeHTML("&lt;div&gt;hello world&lt;/div&gt;") // <div>hello world</div>
 ```
 
 - **skipHTML(String): String|Error**
 ```js
-skipHTML("<scrip>hello world</script>living<br />") 
-// hello worldliving
+skipHTML("<scrip>hello world</script>living<br />") // hello worldliving
 ```
 
 - **skipQuotes(String): String|Error**  
-*chars to skip : '' ""*
+*chars to skip : ''  ""*
 ```js
-skipQuotes("doesn't and what's") 
-// doesn\'t and what\'s
+skipQuotes("doesn't and what's") // doesn\'t and what\'s
 ```
+
 - **rmBackSlashes(String): String|Error**
 ```js
-rmBackSlashes("doesn\\'t what\\\\'s \\") 
-// doesn't what's
+rmBackSlashes("doesn\\'t what\\\\'s \\") // doesn't what's
 ```
 
 - **wrap(String, Object): String**
