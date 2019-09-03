@@ -9,3 +9,4 @@ test('should decode String special chars to html tags', () => {
   expect(decodeHTML("&lt;&lt;"))
   .toBe("<<");
 });
+

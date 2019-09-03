@@ -14,3 +14,5 @@ test('wrap a string', () => {
   expect(wrap("hello world", { ws: "", we: "</br>" }))
     .toBe("hello world</br>");
 });
+
+
