@@ -6,8 +6,8 @@ test('wrap a string', () => {
 });
 
 test('wrap a string', () => {
-  expect(wrap("hello world", { ws: "", we: "" }))
-    .toBe("hello world");
+  expect(wrap("hello world"))
+    .toBe("hello world", {ws:"",we:""});
 });
 
 test('wrap a string', () => {
