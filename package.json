@@ -1,6 +1,6 @@
 {
   "name": "buk",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "encode, decode, filter, skip, quotes, HTML special chars",
   "main": "build/index.js",
   "scripts": {
@@ -29,11 +29,14 @@
     "skip html",
     "encode",
     "decode",
+    "wrap",
     "html special chars",
     "regex",
     "string",
     "html",
-    "javascript"
+    "nodejs",
+    "javascript",
+    "umd"
   ],
   "repository": {
     "type": "git",
