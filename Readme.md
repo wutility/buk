@@ -15,7 +15,7 @@ var { skipQuotes } = require('buk');
 
 Or include it via jsDelivr CDN:
 ```html
-<script src="https://cdn.jsdelivr.net/npm/buk@1.1.0/build/index.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/buk@1.1.1/build/index.min.js"></script>
 ```
 
 ## Methods & Examples
@@ -30,8 +30,8 @@ encodeHTML("<scrip>hello world</script>")
 - **decodeHTML(String): String|Error**  
 *chars to decode : < '' "" & >*
 ```js
-decodeHTML("&lt;scrip&gt;hello world&lt;/script&gt;") 
-// <scrip>hello world</script>
+decodeHTML("&lt;div&gt;hello world&lt;/div&gt;") 
+// <div>hello world</div>
 ```
 
 - **skipHTML(String): String|Error**
