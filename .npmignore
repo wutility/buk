@@ -12,12 +12,17 @@ node_modules
 package-lock.json
 yarn.lock
 
+# project config
+node-rm.js
+rollup.config.js
+
 # project files
 src/
 tests/
 examples/
 example/
 dist/
+
 CHANGELOG.md
 .cache
 .travis.yml
