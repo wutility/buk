@@ -1,16 +1,11 @@
-var buk = require('../index');
-
-/**
- * encodeHTML  
- * 8ms -> 5ms
- */
+var { encodeHTML } = require('../build/index');
 
 test('should encode html special chars', () => {
-  expect(buk.encodeHTML("<scrip>hello world</script>"))
-  .toBe("&lt;scrip&gt;hello world&lt;/script&gt;");
+  expect(encodeHTML("<scrip>hello world</script>"))
+    .toBe("&lt;scrip&gt;hello world&lt;/script&gt;");
 });
 
 test('should encode html special chars', () => {
-  expect(buk.encodeHTML("<link />"))
-  .toBe("&lt;link /&gt;");
+  expect(encodeHTML("<link />"))
+    .toBe("&lt;link /&gt;");
 });

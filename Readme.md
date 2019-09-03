@@ -8,48 +8,58 @@ $ npm i buk --save
 
 ## Usage
 ```js
-import buk from 'buk';
-or
-var buk = require('buk');
+import { skipQuotes } from 'buk';
+// or
+var { skipQuotes } = require('buk');
 ```
-Or include it via jsDelivr CDN:
 
+Or include it via jsDelivr CDN:
 ```html
-<script src="https://cdn.jsdelivr.net/npm/buk@1.0.4/index.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/buk@1.1.0/build/index.min.js"></script>
 ```
 
 ## Methods & Examples
 
-- **buk.encodeHTML(String): String|Error**
+- **encodeHTML(String): String|Error**    
+*chars to encode : < '' "" & >*
 ```js
-buk.encodeHTML("<scrip>hello world</script>") 
+encodeHTML("<scrip>hello world</script>") 
 // &lt;scrip&gt;hello world&lt;/script&gt;
 ```
-- **buk.decodeHTML(String): String|Error**
+
+- **decodeHTML(String): String|Error**  
+*chars to decode : < '' "" & >*
 ```js
-buk.decodeHTML("&lt;scrip&gt;hello world&lt;/script&gt;") 
+decodeHTML("&lt;scrip&gt;hello world&lt;/script&gt;") 
 // <scrip>hello world</script>
 ```
 
-- **buk.skipHTML(String): String|Error**
+- **skipHTML(String): String|Error**
 ```js
-buk.skipHTML("<scrip>hello world</script>living<br />") 
+skipHTML("<scrip>hello world</script>living<br />") 
 // hello worldliving
 ```
 
-- **buk.addBackSlashes(String): String|Error**
+- **skipQuotes(String): String|Error**  
+*chars to skip : '' ""*
 ```js
-buk.addBackSlashes("doesn't and what's") 
-// doesn\'t and what\'s`
+skipQuotes("doesn't and what's") 
+// doesn\'t and what\'s
 ```
-- **buk.rmBackSlashes(String): String|Error**
+- **rmBackSlashes(String): String|Error**
 ```js
-buk.rmBackSlashes("doesn\\'t what\\\\'s \\") 
+rmBackSlashes("doesn\\'t what\\\\'s \\") 
 // doesn't what's
 ```
 
-## Notes
+- **wrap(String, Object): String**
+```js
+wrap("hello world", { ws: "<div>", we: "</div>" }) // <div>hello world</div>
+wrap("hello world", { ws: "", we: "" }) // hello world
+wrap("hello world", { ws: "", we: "</br>" }) // hello world</br>
+```
 
+## Notes
 - Works both in [Node.js](https://nodejs.org) and in the browser.
 - All pull requests are welcome, feel free.
 

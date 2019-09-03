@@ -1,12 +1,12 @@
-var buk = require('../index');
+var { rmBackSlashes } = require('../build/index');
 
 /**
  * rmBackSlashes  
  */
 test('should add slash before every single quote and double', () => {
-  expect(buk.rmBackSlashes("doesn\\'t what\\\\'s \\")).toBe("doesn't what's");
+  expect(rmBackSlashes("doesn\\'t what\\\\'s \\")).toBe("doesn't what's");
 });
 
 test('should add slash before every single quote and double', () => {
-  expect(buk.rmBackSlashes("doesn\'t what\'s")).toBe("doesn't what's");
+  expect(rmBackSlashes("doesn\'t what\'s")).toBe("doesn't what's");
 });

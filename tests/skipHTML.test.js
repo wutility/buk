@@ -1,18 +1,13 @@
-var buk = require('../index');
+var { skipHTML } = require('../build/index');
 
-
-/**
- * skipHTML  
- * 9ms -> 4ms
- */
 
 test('skip html tags and return string between or out', () => {
-  expect(buk.skipHTML("<scrip>hello world</script>living<br />"))
-  .toBe("hello worldliving");
+  expect(skipHTML("<scrip>hello world</script>living<br />"))
+    .toBe("hello worldliving");
 });
 
 
 test('skip html tags and return string between or out', () => {
-  expect(buk.skipHTML("<link  /><script src=''>"))
-  .toBe("");
+  expect(skipHTML("<link  /><script src=''>"))
+    .toBe("");
 });

@@ -1,17 +1,11 @@
-var buk = require('../index');
-
-
-/**
- * encodeHTML  
- * 8ms -> 5ms
- */
+var {decodeHTML} = require('../build/index');
 
 test('should decode String special chars to html tags', () => {
-  expect(buk.decodeHTML("&lt;scrip&gt;hello world&lt;/script&gt;"))
+  expect(decodeHTML("&lt;scrip&gt;hello world&lt;/script&gt;"))
   .toBe("<scrip>hello world</script>");
 });
 
 test('should decode String special chars to html tags', () => {
-  expect(buk.decodeHTML("&lt;&lt;"))
+  expect(decodeHTML("&lt;&lt;"))
   .toBe("<<");
 });
