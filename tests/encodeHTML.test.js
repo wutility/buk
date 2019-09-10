@@ -1,4 +1,4 @@
-var { encodeHTML } = require('../build/index');
+var { encodeHTML } = require('../index');
 
 test('should encode html special chars', () => {
   expect(encodeHTML("<scrip>hello world</script>"))

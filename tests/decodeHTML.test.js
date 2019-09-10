@@ -1,4 +1,4 @@
-var {decodeHTML} = require('../build/index');
+var {decodeHTML} = require('../index');
 
 test('should decode String special chars to html tags', () => {
   expect(decodeHTML("&lt;scrip&gt;hello world&lt;/script&gt;"))

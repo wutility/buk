@@ -1,5 +1,5 @@
 # ✨ Buk   
-encode, decode, filter, skip, quotes, wrap, HTML special chars  
+encode, decode, filter, skip, HTML special chars  
 
 [![](https://data.jsdelivr.com/v1/package/npm/buk/badge)](https://www.jsdelivr.com/package/npm/buk) ![Snyk badge](https://snyk.io/test/github/haikelfazzani/buk/badge.svg) ![bundlephobia badge](https://badgen.net/bundlephobia/min/buk) ![bundlephobia badge](https://badgen.net/bundlephobia/minzip/buk)
 
@@ -9,14 +9,14 @@ $ npm i buk --save
 
 ## Usage
 ```js
-import { skipQuotes } from 'buk';
+import { encodeHTML } from 'buk';
 // or
-var { skipQuotes } = require('buk');
+var { encodeHTML } = require('buk');
 ```
 
 Or include it via jsDelivr CDN:
 ```html
-<script src="https://cdn.jsdelivr.net/npm/buk@1.1.2/build/index.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/buk@1.2.0/index.min.js"></script>
 access via object : buk
 Example : buk.skipHTML("<scrip>hello world</script>living<br />") 
 // hello worldliving
@@ -24,43 +24,26 @@ Example : buk.skipHTML("<scrip>hello world</script>living<br />")
 
 ## Methods & Examples
 
-- **encodeHTML(String): String|Error**    
+- **encodeHTML(String): String|TypeError**    
 *chars to encode : < ' ' " " & >*
 ```js
 encodeHTML("<scrip>hello world</script>") 
 // &lt;scrip&gt;hello world&lt;/script&gt;
 ```
 
-- **decodeHTML(String): String|Error**  
+- **decodeHTML(String): String|TypeError**  
 *chars to decode : < ' ' " " & >*
 ```js
 decodeHTML("&lt;div&gt;hello world&lt;/div&gt;") // <div>hello world</div>
 ```
 
-- **skipHTML(String): String|Error**
+- **skipHTML(String): String|TypeError**
 ```js
-skipHTML("<scrip>hello world</script>living<br />") // hello worldliving
-```
-
-- **skipQuotes(String): String|Error**  
-*chars to skip : ' '  " "*
-```js
-skipQuotes("doesn't and what's") // doesn\'t and what\'s
-```
-
-- **rmBackSlashes(String): String|Error**
-```js
-rmBackSlashes("doesn\\'t what\\\\'s \\") // doesn't what's
-```
-
-- **wrap(String, Object): String**
-```js
-wrap("hello world", { ws: "<div>", we: "</div>" }) // <div>hello world</div>
-wrap("hello world", { ws: "", we: "" }) // hello world
-wrap("hello world", { ws: "", we: "</br>" }) // hello world</br>
+skipHTML("<scrip>hello world</script> 2019<br />") // hello world 2019
 ```
 
 ## Notes
+- TypeError : Invalid type or no argument passed to function.
 - Works both in [Node.js](https://nodejs.org) and in the browser.
 - All pull requests are welcome, feel free.
 

@@ -5,7 +5,7 @@ export default {
   input: 'src/main.js',
   output: {
     name: 'buk',
-    file: 'build/index.js',
+    file: 'index.js',
     format: 'umd'
   },
   plugins: [
