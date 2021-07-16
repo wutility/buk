@@ -16,7 +16,7 @@ var { encodeHTML } = require('buk');
 
 Or include it via jsDelivr CDN:
 ```html
-<script src="https://cdn.jsdelivr.net/npm/buk@1.2.1/index.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/buk@1.2.2/index.min.js"></script>
 access via object : buk
 Example : buk.skipHTML("<scrip>hello world</script>living<br />") 
 // hello worldliving
@@ -28,13 +28,13 @@ Example : buk.skipHTML("<scrip>hello world</script>living<br />")
 *chars to encode : & < > " ' @ + / `
 ```js
 encodeHTML("<scrip>hello world</script>") 
-// &lt;scrip&gt;hello world&lt;/script&gt;
+// &lt;scrip&gt;hello world&lt;&sol;script&gt;
 ```
 
 - **decodeHTML(String): String|TypeError**  
 *chars to decode : & < > " ' @ + / `
 ```js
-decodeHTML("&lt;div&gt;hello world&lt;/div&gt;") 
+decodeHTML("&lt;scrip&gt;hello world&lt;&sol;script&gt;") 
 // <div>hello world</div>
 ```
 
