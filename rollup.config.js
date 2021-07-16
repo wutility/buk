@@ -1,17 +1,25 @@
-import babel from 'rollup-plugin-babel';
-import cleanup from 'rollup-plugin-cleanup';
+import { terser } from "rollup-plugin-terser";
 
 export default {
-  input: 'src/main.js',
-  output: {
-    name: 'buk',
-    file: 'index.js',
-    format: 'umd'
-  },
-  plugins: [
-    babel({
-      exclude: 'node_modules/**'
-    }),
-    cleanup()
+  input: 'src/index.js',
+  output: [
+    {
+      name: 'buk',
+      file: 'build/index.umd.js',
+      format: 'umd'
+    },
+    {
+      file: 'build/index.esm.js',
+      format: 'esm',
+      sourcemap: false
+    },
+    {
+      file: 'build/index.js',
+      format: 'cjs',
+      sourcemap: false
+    }
   ],
+  plugins: [
+    terser()
+  ]
 };

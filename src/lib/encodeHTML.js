@@ -1,19 +1,19 @@
 export default function encodeHTML (s) {
   try {
-    var ENC_CHARS = {
+    const ENC_CHARS = {
       '&': '&amp;',
       '<': '&lt;',
       '>': '&gt;',
+      '/':'&sol;',
       '"': '&quot;',
-      "'": '&#039;'
+      "'": '&apos;',
+      '`':'&grave;',
+      '@': '&commat;',
+      '+': '&plus;'
     }
 
-    return s.replace(/[&<>"']/g, function (m) {
-      return ENC_CHARS[m];
-    })
-
+    return s.replace(/[&<>"'@+/`]/g, m => ENC_CHARS[m])
   } catch (e) {
-
     return e.name === 'TypeError'
       ? new Error('Invalid type or no argument passed to function')
       : e

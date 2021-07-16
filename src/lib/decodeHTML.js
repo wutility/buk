@@ -1,19 +1,20 @@
 export default function decodeHTML (s) {
   try {
-    var DEC_CHARS = {
+    const DEC_CHARS = {
       '&amp;': '&',
       '&lt;': '<',
       '&gt;': '>',
+      '&sol;': '/',
       '&quot;': '"',
-      '&#039;': "'"
+      '&apos;': "'",
+      '&grave;': '`',
+      '&commat;': '@',
+      '&plus;': '+'
     }
 
-    return s.replace(/&amp;|&lt;|&gt;|&quot;|&#039;/g, function (m) {
-      return DEC_CHARS[m];
-    })
+    return s.replace(/\&(amp|lt|gt|sol|quot|apos|grave|commat|plus)\;/g, m => DEC_CHARS[m]);
 
   } catch (e) {
-
     return e.name === 'TypeError'
       ? new Error("Invalid type or no argument passed to function")
       : e

@@ -1,7 +1,9 @@
 node_modules/
 dist/
+build/
 examples/
 example/
 
 .cache
 
+package-lock.json

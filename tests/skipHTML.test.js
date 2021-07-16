@@ -1,5 +1,4 @@
-var { skipHTML } = require('../index');
-
+var { skipHTML } = require('../build/index');
 
 test('skip html tags and return string between or out', () => {
   expect(skipHTML("<scrip>hello world</script>living<br />"))
@@ -10,7 +9,6 @@ test('skip html tags and return string between or out', () => {
   expect(skipHTML("<scrip>hello world</script> 2019<br />"))
     .toBe("hello world 2019");
 });
-
 
 test('skip html tags and return string between or out', () => {
   expect(skipHTML("<link  /><script src=''>"))
